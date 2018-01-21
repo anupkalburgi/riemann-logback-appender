@@ -9,7 +9,7 @@ class RiemannAppender[E] extends UnsynchronizedAppenderBase[E] {
 
 
   override def append(eventObject: E): Unit = {
-    println("have to make riemann connection from here  -- silly")
+    println("have to make riemann connection from here-testing")
     println(eventObject.toString)
 
   Try {
