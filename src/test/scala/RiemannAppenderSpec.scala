@@ -9,6 +9,7 @@ class RiemannAppenderSpec extends FreeSpec with Matchers {
   "should print something" in {
     val evt: LoggingEvent = new LoggingEvent("fqcn", ctx.getLogger("logger"), Level.ALL, "message", null, new Array[AnyRef](0))
     sut.append(evt)
+    true
   }
 
 }
