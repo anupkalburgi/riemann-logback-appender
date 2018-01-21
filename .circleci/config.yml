@@ -38,10 +38,5 @@ jobs:
       # run package
       - run: cat /dev/null | sbt
       - run: go get github.com/tcnksm/ghr
+      - run: ghr -t $GITHUB_TOKEN -u $CIRCLE_PROJECT_USERNAME -r $CIRCLE_PROJECT_REPONAME v0.0.$CIRCLE_BUILD_NUM $CIRCLE_ARTIFACTS/ || true
 
-  deployment:
-    release:
-      branch: master
-      commands:
-      # Publish assets to Github
-      - ghr -t $GITHUB_TOKEN -u $CIRCLE_PROJECT_USERNAME -r $CIRCLE_PROJECT_REPONAME v0.0.$CIRCLE_BUILD_NUM $CIRCLE_ARTIFACTS/ || true
