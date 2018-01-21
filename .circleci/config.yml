@@ -22,19 +22,16 @@ jobs:
       - run: cat /dev/null | sbt test:test
       # run package
       - run: cat /dev/null | sbt packageBin
-  release:
-    docker:
-        # specify the version you desire here
-        - image: circleci/golang:1.8
-    steps:
-      - run: go get github.com/tcnksm/ghr
-      - run: ghr -t $GITHUB_TOKEN -u $CIRCLE_PROJECT_USERNAME -r $CIRCLE_PROJECT_REPONAME v0.0.$CIRCLE_BUILD_NUM $CIRCLE_ARTIFACTS/ || true
-
-workflows:
-  build-and-release:
-    jobs:
-      - build
-      - release
-      - release:
-          requires:
-            - build
+#  release:
+#    docker:
+#        # specify the version you desire here
+#        - image: circleci/golang:1.8
+#    steps:
+#      - run: go get github.com/tcnksm/ghr
+#      - run: ghr -t $GITHUB_TOKEN -u $CIRCLE_PROJECT_USERNAME -r $CIRCLE_PROJECT_REPONAME v0.0.$CIRCLE_BUILD_NUM $CIRCLE_ARTIFACTS/ || true
+#
+#workflows:
+#  build-and-release:
+#    jobs:
+#      - build
+#      - release
