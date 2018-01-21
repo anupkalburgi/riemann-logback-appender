@@ -22,6 +22,8 @@ jobs:
       - run: cat /dev/null | sbt test:test
       # run package
       - run: cat /dev/null | sbt packageBin
+
+      
 #  release:
 #    docker:
 #        # specify the version you desire here
