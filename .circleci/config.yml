@@ -22,6 +22,8 @@ jobs:
       - run: cat /dev/null | sbt test:test
       # run package
       - run: cat /dev/null | sbt packageBin
+      - store_artifacts:
+          path: ~/repo/target/scala-2.12/
   release:
     docker:
         # specify the version you desire here
