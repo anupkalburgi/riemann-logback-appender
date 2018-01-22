@@ -38,7 +38,7 @@ jobs:
       - attach_workspace:
           at: ~/repo/target/
       - run: go get github.com/tcnksm/ghr
-      - run: ghr -t $GITHUB_TOKEN -u $CIRCLE_PROJECT_USERNAME -r $CIRCLE_PROJECT_REPONAME v0.0.$CIRCLE_BUILD_NUM /tmp/workspace || true
+      - run: ghr -t $GITHUB_TOKEN -u $CIRCLE_PROJECT_USERNAME -r $CIRCLE_PROJECT_REPONAME v0.0.$CIRCLE_BUILD_NUM ~/repo/target/ || true
 
 workflows:
   version: 2
