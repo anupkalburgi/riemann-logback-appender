@@ -33,9 +33,9 @@ jobs:
     docker:
         # specify the version you desire here
         - image: circleci/golang:1.8
-    steps:
-      - attach_workspace:
+    - attach_workspace:
         at: ~/repo/target/
+    steps:
       - run: go get github.com/tcnksm/ghr
       - run: ghr -t $GITHUB_TOKEN -u $CIRCLE_PROJECT_USERNAME -r $CIRCLE_PROJECT_REPONAME v0.0.$CIRCLE_BUILD_NUM /tmp/workspace || true
 
