@@ -26,8 +26,8 @@ jobs:
           path: ~/repo/target/scala-2.12/
 
       - persist_to_workspace:
-          root: /tmp/workspace
-          paths: repo/target/scala-2.12/
+          root: ~/repo/target/
+          paths: scala-2.12/
 
   release:
     docker:
