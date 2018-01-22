@@ -24,10 +24,10 @@ jobs:
       - run: cat /dev/null | sbt packageBin
       - store_artifacts:
           path: ~/repo/target/scala-2.12/
-          
+
       - persist_to_workspace:
           root: /tmp/workspace
-          paths: ~/repo/target/scala-2.12/
+          paths: repo/target/scala-2.12/
 
   release:
     docker:
